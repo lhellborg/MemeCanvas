@@ -47,6 +47,37 @@
       // Get Canvas2DContext
       var canvas = document.querySelector('canvas');
       var ctx = canvas.getContext("2d");
+
+      if (image != null) {
+        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);    
+      };
+      
+      // to make the background as a gradient
+      // var my_gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+      // my_gradient.addColorStop(0, "black");
+      // my_gradient.addColorStop(1, "white");
+      // ctx.fillStyle = my_gradient;
+      // ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+      // text attributes
+      ctx.font = "40px Imapact";
+      ctx.textAlign = "center";
+      ctx.strokeStyle = "black";
+      ctx.lineWidth = 5;
+      ctx.fillStyle = "white";
+
+      if (topLine != null) {
+      ctx.fillText(topLine, canvas.width/2, 40);      
+      ctx.strokeText(topLine, canvas.width/2, 40);
+      console.log(topLine);
+     };
+
+     if (bottomLine != null) {
+      ctx.strokeText(bottomLine, canvas.width/2, canvas.height -20);
+      ctx.fillText(bottomLine, canvas.width/2, canvas.height -20);
+      console.log(bottomLine);
+      };
       // Your code here
     }
     
